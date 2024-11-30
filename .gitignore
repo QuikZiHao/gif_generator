@@ -2,4 +2,5 @@ sam2/checkpoints/*
 __pycache__/
 temp/mask/*
 temp/test/*
+temp/gif/*
 sam
