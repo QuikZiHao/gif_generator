@@ -1,0 +1,4 @@
+sam2/checkpoints/*
+__pycache__/
+temp/*
+sam
