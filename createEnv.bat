@@ -20,6 +20,8 @@ pip install -r requirements.txt
 
 cd sam2
 pip install -e .
+pip install -e ".[notebooks]"
+
 
 echo Virtual environment setup complete.
 pause

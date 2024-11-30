@@ -1,6 +1,7 @@
 from constant import SPLIT_OUTPUT
 import os
 from PIL import Image
+from typing import Dict
 
 def video_segement(predictor, inference_state):
     video_segments = {}  # video_segments contains the per-frame segmentation results
@@ -11,20 +12,30 @@ def video_segement(predictor, inference_state):
         }
     return video_segments
 
-def show_segement(frame_stride:int, frame_len:int, video_segments):
+
+def show_segment(frame_stride: int, frame_len: int, video_segments):
     mask_images = []  # List to store mask images
     for out_frame_idx in range(0, frame_len, frame_stride):
         # Open the frame image
         frame_img = Image.open(os.path.join(SPLIT_OUTPUT, f"{out_frame_idx:04d}.jpg"))
         
+        # Ensure the frame has an alpha channel (RGBA)
+        if frame_img.mode != 'RGBA':
+            frame_img = frame_img.convert('RGBA')
+        
         # Loop over the objects in the frame
         for out_obj_id, out_mask in video_segments[out_frame_idx].items():
-            # Create a new image that will hold the mask
-            mask_img = frame_img.copy()
-            mask_img.paste(out_mask, (0, 0), out_mask)  # Use the mask for transparency (alpha)
+            # Ensure the mask has the same size as the frame
+            mask_resized = out_mask.resize(frame_img.size, Image.Resampling.LANCZOS) if out_mask.size != frame_img.size else out_mask
+            
+            # Convert the mask to RGBA if it's not already
+            if mask_resized.mode != 'RGBA':
+                mask_resized = mask_resized.convert('RGBA')
+            
+            # Create a new image that will hold the mask (combine frame and mask)
+            mask_img = Image.alpha_composite(frame_img, mask_resized)
             
             # Add the mask image to the list
             mask_images.append(mask_img)
 
     return mask_images
-
