@@ -1,2 +1,12 @@
-sam2_checkpoint : "../sam2/checkpoints/sam2.1_hiera_large.pt"
-model_cfg : "../sam2/configs/sam2.1/sam2.1_hiera_l.yaml"
+tiny:
+  sam2_checkpoint : "../sam2/checkpoints/sam2.1_hiera_tiny.pt"
+  model_cfg : "../sam2/configs/sam2.1/sam2.1_hiera_t.yaml"
+small:
+  sam2_checkpoint : "../sam2/checkpoints/sam2.1_hiera_small.pt"
+  model_cfg : "../sam2/configs/sam2.1/sam2.1_hiera_s.yaml"
+base_plus:
+  sam2_checkpoint : "../sam2/checkpoints/sam2.1_hiera_base_plus.pt"
+  model_cfg : "../sam2/configs/sam2.1/sam2.1_hiera_b+.yaml"
+large:
+  sam2_checkpoint : "../sam2/checkpoints/sam2.1_hiera_large.pt"
+  model_cfg : "../sam2/configs/sam2.1/sam2.1_hiera_l.yaml"

@@ -3,4 +3,5 @@ __pycache__/
 temp/mask/*
 temp/test/*
 temp/gif/*
+temp/input/*
 sam
