@@ -56,3 +56,16 @@ def crop_mask(video_segments: Dict, frame_len: int):
         result_img.save(png_path)
 
         print(f"Saved {png_filename} as PNG")
+
+def crop_image(crop_box: list, frame_len:int):
+    for out_frame_idx in range(0, frame_len):
+         # Load the original image (background)
+        img_path = os.path.join(SPLIT_OUTPUT, f"{out_frame_idx:04d}.jpg")
+        
+        # Check if image exists to prevent errors
+        if not os.path.exists(img_path):
+            print(f"Skipping frame {out_frame_idx}: Image not found.")
+            continue
+        image = Image.open(img_path)
+        cropped_image = image.crop(crop_box)
+        cropped_image.save(img_path)

@@ -1,7 +1,7 @@
 sam2/checkpoints/*
 __pycache__/
-temp/mask/*
-temp/test/*
-temp/gif/*
-temp/input/*
+fastapi_app/temp/mask/*
+fastapi_app/temp/test/*
+fastapi_app/temp/gif/*
+fastapi_app/temp/input/*
 sam

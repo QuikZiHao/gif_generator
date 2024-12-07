@@ -1,6 +1,6 @@
 from sam2.build_sam import build_sam2_video_predictor
 from constant import DEVICE, CONFIG_PATH
-from load_config import load_config
+from utils.load_config import load_config
 
 def load_model(model_size:str):
     config = load_config(CONFIG_PATH, model_size)
