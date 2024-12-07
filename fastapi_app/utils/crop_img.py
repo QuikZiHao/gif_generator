@@ -69,3 +69,18 @@ def crop_image(crop_box: list, frame_len:int):
         image = Image.open(img_path)
         cropped_image = image.crop(crop_box)
         cropped_image.save(img_path)
+
+def resize_image(height:int , width:int, frame_len:int):
+    for out_frame_idx in range(0, frame_len):
+         # Load the original image (background)
+        img_path = os.path.join(SPLIT_OUTPUT, f"{out_frame_idx:04d}.jpg")
+        
+        # Check if image exists to prevent errors
+        if not os.path.exists(img_path):
+            print(f"Skipping frame {out_frame_idx}: Image not found.")
+            continue
+        with Image.open(img_path) as img:
+            resized_img = img.resize((width, height))
+
+            # Save the resized image
+            resized_img.save(img_path)
