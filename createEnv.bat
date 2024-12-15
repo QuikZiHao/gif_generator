@@ -8,10 +8,10 @@ IF %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
-python -m venv sam
+python -m venv sam_venv
 echo Virtual environment created.
 
-call sam\Scripts\activate
+call sam_venv\Scripts\activate
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
