@@ -2,7 +2,7 @@ import os
 import numpy as np
 from PIL import Image
 from typing import Dict
-from ..constant import PNG_OUTPUT_DIR, SPLIT_OUTPUT
+from constant import PNG_OUTPUT_DIR, SPLIT_OUTPUT
 
 
 def crop_mask(video_segments: Dict, frame_len: int):

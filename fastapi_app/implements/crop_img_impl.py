@@ -1,6 +1,6 @@
 from fastapi.responses import JSONResponse
-from ..utils.get_first_frame import get_frame_len
-from ..utils.crop_img import crop_image, resize_image
+from utils.get_first_frame import get_frame_len
+from utils.crop_img import crop_image, resize_image
 
 
 async def crop_img_implement(crop_box: list):

@@ -1,8 +1,8 @@
 import os
 import cv2
 from pathlib import Path
-from ..utils.drop_frame import drop_frame
-from ..constant import SPLIT_OUTPUT, INPUT_VIDEO
+from utils.drop_frame import drop_frame
+from constant import SPLIT_OUTPUT, INPUT_VIDEO
 
 
 def split_video(video_path: Path, fps: int):

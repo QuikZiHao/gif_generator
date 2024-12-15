@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..implements.get_first_frame_impl import get_first_frame_implment
+from implements.get_first_frame_impl import get_first_frame_implment
 
 
 router = APIRouter()

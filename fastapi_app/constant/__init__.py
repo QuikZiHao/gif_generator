@@ -1,7 +1,7 @@
 import os
 import torch
 from pathlib import Path
-from ..utils.load_config import load_config
+# from utils.load_config import load_config
 
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

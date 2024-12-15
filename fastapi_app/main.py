@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from .services import split_video_services, get_first_frame_services, crop_img_services
+from services import split_video_services, get_first_frame_services, crop_img_services, video_segment_services
 
 
 app = FastAPI()
@@ -9,6 +9,7 @@ app = FastAPI()
 app.include_router(split_video_services.router)
 app.include_router(get_first_frame_services.router)
 app.include_router(crop_img_services.router)
+app.include_router(video_segment_services.router)
 
 
 if __name__ == "__main__":

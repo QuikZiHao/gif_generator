@@ -1,5 +1,5 @@
 from fastapi.responses import JSONResponse
-from ..utils.get_first_frame import get_first_frame
+from utils.get_first_frame import get_first_frame
 
 
 async def get_first_frame_implment():

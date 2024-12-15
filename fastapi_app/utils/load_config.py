@@ -1,6 +1,6 @@
 import yaml
 from pathlib import Path
-from ..config.entity import SAMConfig
+from config.entity import SAMConfig
 
 
 def load_config(pathway:Path, model_key: str = "large"):

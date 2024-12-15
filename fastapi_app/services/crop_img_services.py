@@ -1,6 +1,6 @@
 from typing import List
 from fastapi import APIRouter, Form, HTTPException
-from ..implements.crop_img_impl import crop_img_implement, resize_img_implement
+from implements.crop_img_impl import crop_img_implement, resize_img_implement
 
 
 router = APIRouter()

@@ -1,8 +1,8 @@
 import os
 from fastapi import File, UploadFile
 from fastapi.responses import JSONResponse
-from ..utils.split_video import split_video
-from ..constant import INPUT_PATH, INPUT_DIR
+from utils.split_video import split_video
+from constant import INPUT_PATH, INPUT_DIR
 
 
 async def split_video_implment(fps: int, video: UploadFile = File(...), ):

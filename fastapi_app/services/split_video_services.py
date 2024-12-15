@@ -1,5 +1,5 @@
 from fastapi import APIRouter, File, UploadFile, Form
-from ..implements.split_video_impl import split_video_implment
+from implements.split_video_impl import split_video_implment
 
 
 router = APIRouter()
