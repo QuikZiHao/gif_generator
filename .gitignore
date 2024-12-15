@@ -4,6 +4,6 @@ fastapi_app/temp/mask/*
 fastapi_app/temp/test/*
 fastapi_app/temp/gif/*
 fastapi_app/temp/input/*
-./sam
+/sam/
 sam_venv
 temp/
