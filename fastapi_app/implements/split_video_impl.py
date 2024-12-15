@@ -1,20 +1,22 @@
 import os
-from fastapi import FastAPI, File, UploadFile
-from constant import INPUT_PATH
+from fastapi import File, UploadFile
 from fastapi.responses import JSONResponse
-from utils.split_video import split_video
+from ..utils.split_video import split_video
+from ..constant import INPUT_PATH, INPUT_DIR
 
-async def split_video_implment(video: UploadFile = File(...), fps: int):
+
+async def split_video_implment(fps: int, video: UploadFile = File(...), ):
+    os.makedirs(INPUT_DIR, exist_ok=True)
+
     with open(INPUT_PATH, "wb") as buffer:
         buffer.write(await video.read())
 
     try:
-        # Call the service function to split the video
         split_video(INPUT_PATH,fps)
-
-        # Return the list of saved frames or the result
-        return JSONResponse(content={"message": "Video processed"})
+        return JSONResponse(status_code=200, content={"message": "Video processed"})
+    
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"message": f"An Error occured during splitting video: {e}"})
 
     finally:
-        # Clean up: remove the temporarily saved video
         os.remove(INPUT_PATH)

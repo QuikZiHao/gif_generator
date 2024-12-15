@@ -1,7 +1,7 @@
 import cv2
 import imageio
 import numpy as np
-from constant import PNG_OUTPUT_DIR, GIF_PATH
+from ..constant import PNG_OUTPUT_DIR, GIF_PATH
 
 
 def to_gif(frame_len:int, frame_duration:float):

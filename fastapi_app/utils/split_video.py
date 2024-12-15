@@ -1,15 +1,15 @@
-import cv2
 import os
+import cv2
 from pathlib import Path
-from constant import SPLIT_OUTPUT, INPUT_VIDEO
-from utils.drop_frame import drop_frame
+from ..utils.drop_frame import drop_frame
+from ..constant import SPLIT_OUTPUT, INPUT_VIDEO
 
 
 def split_video(video_path: Path, fps: int):
 # Create the output directory if it doesn't exist
     if not os.path.exists(SPLIT_OUTPUT):
         os.makedirs(SPLIT_OUTPUT)
-    drop_frame(video_path=video_path,fps=fps)
+    # drop_frame(video_path=video_path,fps=fps)
     # Open the video file using OpenCV
     cap = cv2.VideoCapture(INPUT_VIDEO)
 

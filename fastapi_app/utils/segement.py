@@ -1,7 +1,8 @@
-from constant import SPLIT_OUTPUT
 import os
 from PIL import Image
 from typing import Dict
+from ..constant import SPLIT_OUTPUT
+
 
 def video_segement(predictor, inference_state):
     video_segments = {}  # video_segments contains the per-frame segmentation results

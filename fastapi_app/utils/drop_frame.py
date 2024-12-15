@@ -1,6 +1,6 @@
 import cv2
 from pathlib import Path
-from constant import INPUT_VIDEO
+from ..constant import INPUT_VIDEO
 
 
 def drop_frame(video_path: Path, fps: int):

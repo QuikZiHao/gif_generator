@@ -1,8 +1,8 @@
-import numpy as np
 import os
-from constant import SPLIT_OUTPUT
 import cv2
+import numpy as np
 from typing import Dict
+from ..constant import SPLIT_OUTPUT
 
 
 def merge_mask(segements: Dict[int, np.ndarray]):
