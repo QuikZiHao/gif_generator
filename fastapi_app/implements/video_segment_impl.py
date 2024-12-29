@@ -17,7 +17,6 @@ async def video_segment_implment(positive_points, negative_points, frame_duratio
             predictor=predictor,
             inference_state=inference_state,
             iter_frame=0,
-            # positive_points=[[114,117],[379,141],[263,294],[298,365],[244,463],[380,461]],
             positive_points=positive_points,
             negative_points=negative_points
         )

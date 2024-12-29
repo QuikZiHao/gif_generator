@@ -1,11 +1,10 @@
 import cv2
-from pathlib import Path
 from constant import INPUT_VIDEO
 
 
-def drop_frame(video_path: Path, fps: int):
+def drop_frame(fps: int):
     # Open the input video
-    cap = cv2.VideoCapture(video_path)
+    cap = cv2.VideoCapture(INPUT_VIDEO)
 
     # Get original video properties
     original_fps = int(cap.get(cv2.CAP_PROP_FPS))
@@ -33,4 +32,4 @@ def drop_frame(video_path: Path, fps: int):
     # Release resources
     cap.release()
     out.release()
-    print(f"Video frame rate changed to {fps} fps and saved at {video_path}")
+    print(f"Video frame rate changed to {fps} fps and saved at {INPUT_VIDEO}")

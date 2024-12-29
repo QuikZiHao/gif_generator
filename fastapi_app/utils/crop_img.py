@@ -3,11 +3,15 @@ import numpy as np
 from PIL import Image
 from typing import Dict
 from constant import PNG_OUTPUT_DIR, SPLIT_OUTPUT
-
+import shutil
 
 def crop_mask(video_segments: Dict, frame_len: int):
-    # Ensure the PNG output directory exists
+        # Create the output directory if it doesn't exist
+    if os.path.exists(PNG_OUTPUT_DIR):
+    # Delete the directory and all its contents
+        shutil.rmtree(PNG_OUTPUT_DIR)
     os.makedirs(PNG_OUTPUT_DIR, exist_ok=True)
+
 
     # Ensure output directory exists
     if not os.path.exists(PNG_OUTPUT_DIR):
